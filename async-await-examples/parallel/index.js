@@ -1,0 +1,19 @@
+const { taskOne, taskTwo } = require('./tasks');
+
+async function main(){
+    try{
+        
+        console.time('Measuring Time');        
+        const results = await Promise.all([taskOne(), taskTwo()]);
+        console.timeEnd('Measuring Time');
+
+        console.log('Task One returned', results[0]);
+        console.log('Task Two Two', results[1]);
+
+
+    }catch (error){
+        console.log(error);
+    }
+}
+
+main();
